@@ -13,4 +13,5 @@ def client():
 def test_home_page(client):
     response = client.get('/')
     assert response.status_code == 200
-    assert b"Information" in response.data
+    assert b"Information" in response.data  # Проверяем, что строка "Information" присутствует
+    assert b"Привет мир!" in response.data  # Проверяем, что строка "Привет мир!" присутствует

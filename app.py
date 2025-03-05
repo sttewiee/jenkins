@@ -90,16 +90,8 @@ def index():
         <p>Привет мир!</p>
     </div>
 
-    <div class="images">
-        <!-- Используем url_for для правильного пути к картинке -->
-        <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Example Image 1">
-        <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Example Image 2">
-        <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Example Image 3">
-    </div>
 
-    <div class="footer">
-        <p>Created by <a href="https://example.com" target="_blank">Levchenko Alexey</a></p>
-    </div>
+
 </body>
 </html>'''
     return render_template_string(html_content)
