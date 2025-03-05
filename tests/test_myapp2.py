@@ -11,14 +11,14 @@ def client():
 
 def test_index(client):
     response = client.get('/')  # Делаем GET-запрос на главную страницу
-    assert b"Information" in response.data  # Проверяем наличие слова "Information" в ответе
-    assert b"Привет мир!" in response.data  # Проверяем наличие текста "Привет мир!"
+    assert "Information" in response.data.decode("utf-8")  # Проверяем наличие слова "Information" в ответе
+    assert "Привет мир!" in response.data.decode("utf-8")  # Проверяем наличие текста "Привет мир!"
 
 def test_images_exist(client):
     response = client.get('/')
     # На странице нет изображений, поэтому этот тест будет удален или нужно будет добавить изображения в HTML.
-    assert b"<img src=\"" not in response.data  # Проверяем, что на странице нет изображений
+    assert "<img src=\"" not in response.data.decode("utf-8")  # Проверяем, что на странице нет изображений
 
 def test_page_title(client):
     response = client.get('/')
-    assert b"<title>Information</title>" in response.data  # Проверяем, что заголовок страницы корректный
+    assert "<title>Information</title>" in response.data.decode("utf-8")  # Проверяем, что заголовок страницы корректный
