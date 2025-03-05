@@ -2,13 +2,14 @@ FROM python:3.12
 
 WORKDIR /app
 
+# Копируем проект и устанавливаем зависимости
 COPY . .
 
-# Установка зависимостей из requirements.txt
+# Устанавливаем зависимости, включая pytest
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Проверка, установлен ли pytest
-RUN pytest --version
+# Проверяем, доступен ли pytest
+RUN which pytest
 
-# Запуск тестов, если pytest доступен
+# Запускаем приложение или тесты по умолчанию
 CMD ["pytest", "tests/test_myapp.py", "--maxfail=1", "--disable-warnings"]
