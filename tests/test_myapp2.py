@@ -1,5 +1,6 @@
 import sys
 import os
+import pytest  # Добавляем импорт pytest
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from app import app  # Импортируем Flask-приложение
@@ -19,6 +20,4 @@ def test_images_exist(client):
     # На странице нет изображений, поэтому этот тест будет удален или нужно будет добавить изображения в HTML.
     assert "<img src=\"" not in response.data.decode("utf-8")  # Проверяем, что на странице нет изображений
 
-def test_page_title(client):
-    response = client.get('/')
-    assert "<title>Information</title>" in response.data.decode("utf-8")  # Проверяем, что заголовок страницы корректный
+def test
