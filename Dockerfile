@@ -12,4 +12,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 RUN which pytest
 
 # Запускаем приложение или тесты по умолчанию
-CMD ["pytest", "tests/test_myapp.py", "--maxfail=1", "--disable-warnings"]
+CMD ["/usr/local/bin/pytest", "tests/test_myapp.py", "--maxfail=1", "--disable-warnings"]
+
