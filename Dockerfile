@@ -2,11 +2,12 @@ FROM python:3.12
 
 WORKDIR /app
 
+# Копируем все файлы проекта
 COPY . .
 
-RUN pip install --no-cache-dir --upgrade pip \
-    && pip install Flask pytest
+# Устанавливаем зависимости
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install Flask pytest
 
-EXPOSE 5000
-
+# Запускаем приложение, если потребуется
 CMD ["python", "app.py"]
