@@ -26,6 +26,11 @@ def index():
             background: #fff;
             border-radius: 8px;
         }
+        .content p {
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
     </style>
 </head>
 <body>
