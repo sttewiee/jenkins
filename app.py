@@ -36,7 +36,7 @@ def index():
 <body>
     <h1>Information</h1>
     <div class="content">
-        <p>Привет мир!</p>
+        <p>Привет мир бла бла бла!</p>
     </div>
 </body>
 </html>'''
